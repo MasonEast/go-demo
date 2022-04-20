@@ -8,8 +8,8 @@ import (
 )
 
 func ioFn() {
-	fileName := "/Users/manbang/Desktop/go/go-demo/file.txt"
-	fileName2 := "/Users/manbang/Desktop/go/go-demo/file2.txt"
+	fileName := "/Users/manbang/Desktop/go/go-demo/File/file.txt"
+	fileName2 := "/Users/manbang/Desktop/go/go-demo/File/file2.txt"
 	file, err := os.Open(fileName)
 	if err !=nil {
 		fmt.Println(err)
