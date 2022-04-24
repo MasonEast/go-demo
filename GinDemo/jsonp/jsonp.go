@@ -1,0 +1,19 @@
+package jsonp
+
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
+func Jsonp( r *gin.Engine) {
+	r.GET("/jsonp", func(c *gin.Context) {
+		data := map[string]interface{}{
+			"foo": "bar",
+		}
+
+		// /JSONP?callback=x
+		// 将输出：x({\"foo\":\"bar\"})
+		c.JSONP(http.StatusOK, data)
+	})
+}

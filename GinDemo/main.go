@@ -3,8 +3,11 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 
+	"gindemo/binding"
 	"gindemo/htmlRender"
 	"gindemo/httppusher"
+	"gindemo/jsonp"
+	"gindemo/upload"
 )
 
 func main() {
@@ -16,6 +19,9 @@ func main() {
 
 	htmlRender.Render(r)
 	httppusher.Push(r)
+	jsonp.Jsonp(r)
+	binding.Binding(r)
+	upload.Upload(r)
 
 	r.Run(":8081")
 }
