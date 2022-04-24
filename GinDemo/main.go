@@ -3,10 +3,12 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 
+	"gindemo/basicauth"
 	"gindemo/binding"
 	"gindemo/htmlRender"
 	"gindemo/httppusher"
 	"gindemo/jsonp"
+	"gindemo/log"
 	"gindemo/upload"
 )
 
@@ -22,6 +24,8 @@ func main() {
 	jsonp.Jsonp(r)
 	binding.Binding(r)
 	upload.Upload(r)
+	basicauth.BasicAuth(r)
+	log.Log(r)
 
 	r.Run(":8081")
 }
