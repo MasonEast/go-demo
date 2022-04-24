@@ -1,4 +1,4 @@
-package binding
+package binding2
 
 import "github.com/gin-gonic/gin"
 

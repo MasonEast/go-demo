@@ -4,12 +4,13 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"gindemo/basicauth"
-	"gindemo/binding"
+	"gindemo/cookie"
 	"gindemo/htmlRender"
 	"gindemo/httppusher"
 	"gindemo/jsonp"
 	"gindemo/log"
 	"gindemo/upload"
+	"gindemo/validator"
 )
 
 func main() {
@@ -22,10 +23,11 @@ func main() {
 	htmlRender.Render(r)
 	httppusher.Push(r)
 	jsonp.Jsonp(r)
-	binding.Binding(r)
 	upload.Upload(r)
 	basicauth.BasicAuth(r)
 	log.Log(r)
+	validator.Validator(r)
+	cookie.Cookie(r)
 
 	r.Run(":8081")
 }
