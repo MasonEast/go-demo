@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"gindemo/htmlRender"
+	"gindemo/httppusher"
 )
 
 func main() {
@@ -14,6 +15,7 @@ func main() {
 	})
 
 	htmlRender.Render(r)
+	httppusher.Push(r)
 
 	r.Run(":8081")
 }
